@@ -2,7 +2,7 @@ lock '3.17'
 # Change these
 server '138.197.25.237', port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:kraflab/dsda-r.git'
+set :repo_url,        'git@github.com:dsda-org/dsda-r.git'
 set :application,     'dsda-r'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
