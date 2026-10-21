@@ -24,3 +24,5 @@
 /public/*
 
 /config/master.key
+/config/credentials/production.key
+/config/credentials/production.key.enc
