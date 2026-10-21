@@ -21,7 +21,7 @@ class DemosCreateTest < ActionDispatch::IntegrationTest
         players: [players(:kraflab).name],
         tags: [{ text: 'Also reality', show: 1 }],
         file: {
-          data: '1234',
+          data: dummy_zip_bytes,
           name: 'test_demo.zip'
         }
       }

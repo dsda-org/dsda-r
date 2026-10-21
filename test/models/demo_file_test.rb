@@ -4,7 +4,7 @@ class DemoFileTest < ActiveSupport::TestCase
 
   def setup
     @wad = wads(:btsx)
-    @file = dummy_zip
+    @file = dummy_zip_file
     @demo_file = DemoFile.new(
       wad: @wad, data: @file, md5: 'demo_file_test', base_path: @wad.short_name
     )

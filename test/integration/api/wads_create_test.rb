@@ -16,7 +16,7 @@ class WadsCreateTest < ActionDispatch::IntegrationTest
         iwad: @iwad.name,
         parent: wads(:wad_1).short_name,
         file: {
-          data: '1234',
+          data: dummy_zip_bytes,
           name: 'test_wad.zip'
         }
       }

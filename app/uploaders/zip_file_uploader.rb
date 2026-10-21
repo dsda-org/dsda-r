@@ -27,11 +27,11 @@ class ZipFileUploader < CarrierWave::Uploader::Base
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  def extension_whitelist
+  def extension_allowlist
     %w(zip cab)
   end
 
-  def content_type_whitelist
+  def content_type_allowlist
     ['application/zip', 'application/vnd.ms-cab-compressed']
   end
 end

@@ -4,7 +4,7 @@ class WadFileTest < ActiveSupport::TestCase
 
   def setup
     @iwad = iwads(:doom2)
-    @file = dummy_zip
+    @file = dummy_zip_file
     @wad_file = WadFile.new(
       iwad: @iwad,
       data: @file,

@@ -3,7 +3,7 @@ require 'test_helper'
 class PortTest < ActiveSupport::TestCase
 
   def setup
-    @file = dummy_zip
+    @file = dummy_zip_file
     @port = Port.new(
       family: "PRBoom+", version: "v2.5.1.3", data: @file, md5: '1234'
     )
@@ -53,7 +53,7 @@ class PortTest < ActiveSupport::TestCase
 
   test "family + version should be unique" do
     duplicate_port = @port.dup
-    duplicate_port.data = dummy_zip 1
+    duplicate_port.data = dummy_zip_file 1
     duplicate_port.md5 = 'dup'
     @port.save
     assert_not duplicate_port.valid?

@@ -35,8 +35,8 @@ end
 group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'minitest', '~> 5.25'
   gem 'minitest-reporters'
-  gem 'mini_backtrace'
   gem 'mocha'
   gem 'timecop'
 end

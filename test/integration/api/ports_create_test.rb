@@ -7,7 +7,7 @@ class PortsCreateTest < ActionDispatch::IntegrationTest
       port: {
         family: 'zdoom',
         version: 'v2.7',
-        file: { data: '1234', name: 'zdoom.zip' }
+        file: { data: dummy_zip_bytes, name: 'zdoom.zip' }
       }
     }
     @wrong_params = { port: @params[:port].merge(family: nil) }

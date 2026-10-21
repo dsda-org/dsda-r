@@ -35,7 +35,7 @@ describe Domain::Wad::Update do
     let(:new_attributes) do
       {
         file: {
-          data: 'btsx_zip_new',
+          data: dummy_zip_bytes,
           name: 'btsx_zip_new.zip'
         }
       }
