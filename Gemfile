@@ -23,7 +23,7 @@ gem 'rails-jquery-autocomplete'
 gem 'js_cookie_rails'
 gem 'carrierwave', '~> 1.3'
 gem 'bootsnap', '>= 1.7.0'
-gem 'nokogiri', '~> 1.16.0'
+gem 'nokogiri', '~> 1.19.4'
 gem 'concurrent-ruby', '1.3.4'
 
 group :development, :test do
