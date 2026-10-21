@@ -85,7 +85,7 @@ GEM
     ansi (1.5.0)
     autoprefixer-rails (10.4.21.0)
       execjs (~> 2)
-    base64 (0.2.0)
+    base64 (0.3.0)
     bcrypt (3.1.20)
     benchmark (0.4.0)
     bigdecimal (3.1.9)
@@ -392,7 +392,7 @@ GEM
       railties (>= 6.0.0)
     webrick (1.9.1)
     websocket (1.2.11)
-    websocket-driver (0.8.0)
+    websocket-driver (0.8.2)
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
