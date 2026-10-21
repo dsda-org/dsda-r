@@ -27,7 +27,7 @@ gem 'nokogiri', '~> 1.19.4'
 gem 'concurrent-ruby', '1.3.4'
 
 group :development, :test do
-  gem 'sqlite3', '~> 1.7.0'
+  gem 'sqlite3', '~> 2.9.6'
   gem 'byebug', platform: :mri
   gem 'pry'
 end
