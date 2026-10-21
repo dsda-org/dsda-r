@@ -215,6 +215,7 @@ GEM
       minitest (> 1.2.0)
       rails (>= 2.3.3)
     mini_mime (1.1.5)
+    mini_portile2 (2.8.9)
     minitest (5.25.5)
     minitest-reporters (1.7.1)
       ansi
@@ -240,17 +241,24 @@ GEM
       net-protocol
     net-ssh (7.3.0)
     nio4r (2.7.4)
-    nokogiri (1.16.8-aarch64-linux)
+    nokogiri (1.19.4)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.16.8-arm-linux)
+    nokogiri (1.19.4-aarch64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.16.8-arm64-darwin)
+    nokogiri (1.19.4-aarch64-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.16.8-x86-linux)
+    nokogiri (1.19.4-arm-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.16.8-x86_64-darwin)
+    nokogiri (1.19.4-arm-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.16.8-x86_64-linux)
+    nokogiri (1.19.4-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.19.4-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.19.4-x86_64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.19.4-x86_64-linux-musl)
       racc (~> 1.4)
     ostruct (0.6.1)
     pg (1.5.9)
@@ -431,7 +439,7 @@ DEPENDENCIES
   mini_backtrace
   minitest-reporters
   mocha
-  nokogiri (~> 1.16.0)
+  nokogiri (~> 1.19.4)
   pg (~> 1.5)
   pry
   puma (~> 4.3)
