@@ -35,7 +35,7 @@
 # Do not treat an `ActionController::Parameters` instance
 # as equal to an equivalent `Hash` by default.
 #++
-Rails.application.config.action_controller.allow_deprecated_parameters_hash_equality = false
+# Rails.application.config.action_controller.allow_deprecated_parameters_hash_equality = false
 
 ###
 # Active Record Encryption now uses SHA-256 as its hash digest algorithm.
@@ -81,7 +81,7 @@ Rails.application.config.action_controller.allow_deprecated_parameters_hash_equa
 ###
 # Disable deprecated singular associations names.
 #++
-Rails.application.config.active_record.allow_deprecated_singular_associations_name = false
+# Rails.application.config.active_record.allow_deprecated_singular_associations_name = false
 
 ###
 # Enable the Active Job `BigDecimal` argument serializer, which guarantees
@@ -101,14 +101,14 @@ Rails.application.config.active_record.allow_deprecated_singular_associations_na
 # Options are `true`, and `false`. If `false`, the exception will be reported
 # as `handled` and logged instead.
 #++
-Rails.application.config.active_support.raise_on_invalid_cache_expiration_time = true
+# Rails.application.config.active_support.raise_on_invalid_cache_expiration_time = true
 
 ###
 # Specify whether Query Logs will format tags using the SQLCommenter format
 # (https://open-telemetry.github.io/opentelemetry-sqlcommenter/), or using the legacy format.
 # Options are `:legacy` and `:sqlcommenter`.
 #++
-Rails.application.config.active_record.query_log_tags_format = :legacy
+# Rails.application.config.active_record.query_log_tags_format = :sqlcommenter
 
 ###
 # Specify the default serializer used by `MessageEncryptor` and `MessageVerifier`
@@ -138,7 +138,7 @@ Rails.application.config.active_record.query_log_tags_format = :legacy
 # servers, first deploy without changing the serializer, then set the serializer
 # in a subsequent deploy.
 #++
-Rails.application.config.active_support.message_serializer = :json
+# Rails.application.config.active_support.message_serializer = :json_allow_marshal
 
 ###
 # Enable a performance optimization that serializes message data and metadata
