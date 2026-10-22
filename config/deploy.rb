@@ -34,7 +34,7 @@ set :puma_enable_lingering, false # already enabled in the server
 
 ## Linked Files & Directories (Default None):
 set :linked_dirs, %w{public/files tmp/cache tmp/uploads}
-append :linked_files, "config/credentials/production.key"
+append :linked_files, "config/credentials/production.key", "config/credentials/production.yml.enc"
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
