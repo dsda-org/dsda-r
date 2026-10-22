@@ -25,4 +25,4 @@
 
 /config/master.key
 /config/credentials/production.key
-/config/credentials/production.key.enc
+/config/credentials/production.yml.enc

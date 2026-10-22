@@ -23,6 +23,7 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
+set :puma_enable_lingering, false # already enabled in the server
 
 ## Defaults:
 # set :scm,           :git
@@ -33,6 +34,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 
 ## Linked Files & Directories (Default None):
 set :linked_dirs, %w{public/files tmp/cache tmp/uploads}
+append :linked_files, "config/credentials/production.key"
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
