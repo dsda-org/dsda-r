@@ -21,7 +21,7 @@ module Domain
       end
 
       def update_tag_fields(demo)
-        demo.update!(
+        demo.update_columns(
           has_hidden_tag: demo.sub_categories.hidden.exists?,
           has_shown_tag: demo.sub_categories.shown.exists?
         )
