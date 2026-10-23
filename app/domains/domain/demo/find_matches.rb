@@ -61,6 +61,7 @@ module Domain
 
       def query_coop
         return if details[:coop].nil?
+        return unless details[:coop]
 
         @query = query.where('guys > 1')
       end
