@@ -85,10 +85,10 @@ class PlayersController < ApplicationController
     render json: PlayerSerializer.call(player)
   end
 
-  def api_players
+  def api_list
     page = params[:page] || 1
-    per = params[:per] || 100
-    per = 50 if per.to_i > 200
+    per = params[:per] || 50
+    per = 200 if per.to_i > 200
 
     players = Domain::Player.list(page: page, per: per)
 

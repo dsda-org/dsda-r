@@ -78,7 +78,7 @@ class DemosController < ApplicationController
     render json: DemoSerializer.call(demo, request.base_url)
   end
 
-  def api_demos
+  def api_list
     wad = Domain::Wad.single(short_name: params[:wad])
     level = params[:level]
     category = params[:category]

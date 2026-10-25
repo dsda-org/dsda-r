@@ -63,6 +63,24 @@ class WadsController < ApplicationController
     @wad = Domain::Wad.single(short_name: params[:id], assert: true)
   end
 
+  def api_list
+    iwad = Domain::Iwad.single(short_name: params[:iwad])
+
+    page = params[:page] || 1
+    per = params[:per] || 50
+    per = 200 if per.to_i > 200
+
+    wads = Domain::Wad.list(iwad_id: iwad&.id, page: page, per: per)
+
+    render json: {
+      wads: wads.map { |wad| WadSerializer.call(wad, request.base_url) },
+      page: wads.current_page,
+      per: wads.limit_value,
+      total_pages: wads.total_pages,
+      total_wads: wads.total_count
+    }
+  end
+
   def api_get
     wad = Domain::Wad.single(short_name: params[:id])
     render json: WadSerializer.new(wad, request.base_url).call

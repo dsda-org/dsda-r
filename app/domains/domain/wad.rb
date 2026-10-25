@@ -2,11 +2,13 @@ module Domain
   module Wad
     extend self
 
-    def list(letter: nil, numbers: nil, page: nil)
+    def list(letter: nil, numbers: nil, iwad_id: nil, page: nil, per: nil)
       query = ::Wad.all
       query = query.where('short_name LIKE ?', "#{letter}%") if letter
       query = number_regex_query(query) if numbers
+      query = query.where(iwad_id: iwad_id) if page
       query = query.page(page) if page
+      query = query.per(per) if per
       query
     end
 

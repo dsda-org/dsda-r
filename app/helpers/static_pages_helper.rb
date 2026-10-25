@@ -158,6 +158,35 @@ module StaticPagesHelper
         }
         JSON
       },
+      { # GET /api/wads/
+        endpoint: 'GET /api/wads/',
+        description: 'Returns all matching wads',
+        parameters: [
+          { name: 'iwad', required: false, type: 'string', description: "The wad's iwad" },
+          { name: 'page', required: false, type: 'integer', description: "The page number (default = <code>1</code>)" },
+          { name: 'per', required: false, type: 'integer', description: "How many players to show per page (default = <code>50</code>, max = <code>200</code>)" }
+        ],
+        example_request: 'https://dsdarchive.com/api/wads?iwad=tnt',
+        example_response: <<~JSON
+        {
+          "wads": [
+            {
+              "short_name": "tntr",
+              "name": "TNT: Revilution",
+              "author": "Various",
+              "iwad": "tnt",
+              "file": "https://dsdarchive.com/files/wads/doom2/2894/tntr.zip"
+            },
+
+            ...
+          ],
+          "page": 1,
+          "per": 50,
+          "total_pages": 1,
+          "total_wads": 21
+        }
+        JSON
+      },
       { # GET /api/wads/{short_name}
         endpoint: 'GET /api/wads/{short_name}',
         description: 'Returns a specific wad details.',

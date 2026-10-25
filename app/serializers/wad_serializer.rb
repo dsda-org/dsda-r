@@ -1,4 +1,8 @@
 class WadSerializer
+  def self.call(demo, base_url)
+    new(demo, base_url).call
+  end
+
   def initialize(wad, base_url)
     @wad = wad
     @base_url = base_url

@@ -34,11 +34,12 @@ Rails.application.routes.draw do
   post  'api/tokens/'       => "tokens#api_create"
   post  'api/otp/'          => "otp#reset"
 
-  get 'api/demos' => 'demos#api_demos'
+  get 'api/demos' => 'demos#api_list'
   get 'api/demos/records' => 'demos#api_records'
   get 'api/demos/:id' => 'demos#api_get'
+  get 'api/wads' => 'wads#api_list'
   get 'api/wads/:id' => 'wads#api_get'
-  get 'api/players' => 'players#api_players'
+  get 'api/players' => 'players#api_list'
   get 'api/players/:id' => 'players#api_get'
 
   get 'no_file' => "static_pages#no_file"
