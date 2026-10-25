@@ -27,7 +27,7 @@ class Demo < ApplicationRecord
   validates :category,  presence: true
   validates :players,   presence: true
   validates :demo_file, presence: true
-  validates_associated :demo_file
+  validates_associated :demo_file, if: -> { demo_file&.new_record? || demo_file&.changed? }
 
   validates :year, numericality: { greater_than: 1993 }, allow_nil: true
   validates :tics,        presence: true, numericality: { greater_than_or_equal_to: 0 }

@@ -32,6 +32,6 @@ class ZipFileUploader < CarrierWave::Uploader::Base
   end
 
   def content_type_allowlist
-    ['application/zip', 'application/x-zip-compressed', 'application/vnd.ms-cab-compressed', 'invalid/invalid']
+    ['application/zip', 'application/x-zip-compressed', 'application/vnd.ms-cab-compressed']
   end
 end
