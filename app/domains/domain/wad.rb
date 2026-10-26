@@ -6,7 +6,7 @@ module Domain
       query = ::Wad.all
       query = query.where('short_name LIKE ?', "#{letter}%") if letter
       query = number_regex_query(query) if numbers
-      query = query.where(iwad_id: iwad_id) if page
+      query = query.where(iwad_id: iwad_id) if iwad_id
       query = query.page(page) if page
       query = query.per(per) if per
       query

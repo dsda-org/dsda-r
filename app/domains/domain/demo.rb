@@ -27,7 +27,7 @@ module Domain
 
     # Soft category pulls in related categories
     def list(
-      wad_id: nil, tas: nil, guys: nil, level: nil, standard: nil, only_records: nil,
+      wad_id: nil, tas: nil, guys: nil, level: nil, player: nil, standard: nil, only_records: nil,
       category: nil, soft_category: nil, categories: nil, solo_net: nil,
       order_by: nil, order_direction: nil, page: nil, per: nil
     )
@@ -36,6 +36,7 @@ module Domain
       query = query.where(level: level) if level
       categories ||= resolve_categories(category, soft_category)
       query = query.where(category: categories) if categories
+      query = query.where(id: ::Demo.joins(:players).where(players: { username: player }).select(:id)) if player
       query = query.where(tas: tas) if !tas.nil?
       query = query.where(solo_net: solo_net) if !solo_net.nil?
       query = query.where(guys: guys) if guys

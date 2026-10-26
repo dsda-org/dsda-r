@@ -82,6 +82,7 @@ class DemosController < ApplicationController
     wad = Domain::Wad.single(short_name: params[:wad])
     level = params[:level]
     category = params[:category]
+    player = params[:player]
     only_records = params[:only_records] && ActiveModel::Type::Boolean.new.cast(params[:only_records])
     tas = params[:tas]
     guys = params[:guys]
@@ -101,7 +102,7 @@ class DemosController < ApplicationController
     per = params[:per] || 50
     per = 200 if per.to_i > 200
 
-    demos = Domain::Demo.list(wad_id: wad&.id, level: level, category: category,
+    demos = Domain::Demo.list(wad_id: wad&.id, level: level, category: category, player: player,
                               only_records: only_records, tas: tas, guys: guys,
                               page: page, per: per, order_by: order_by, order_direction: order_direction)
                         .includes(:players).includes(:category).includes(:demo_file)
